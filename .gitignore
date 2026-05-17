@@ -1,0 +1,43 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# Logs
+*.log
+
+# Environment files
+.env
+
+# Database files
+*.sql
+*.sqlite
+*.db
+
+# Laragon/XAMPP temporary files
+tmp/
+temp/
+
+# Composer dependencies (if added later)
+vendor/
+
+# Node modules (if frontend tooling added later)
+node_modules/
+
+# Cache files
+.cache/
+
+# Uploaded files (optional)
+uploads/
+
+# PHPUnit cache (if added later)
+.phpunit.result.cache
+
+# Generated files
+dist/
+build/
