@@ -15,7 +15,6 @@ Thumbs.db
 .env
 
 # Database files
-*.sql
 *.sqlite
 *.db
 
