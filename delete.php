@@ -1,10 +1,15 @@
 <?php
 
 include 'connection.php';
+include 'SqlLoader.php';
 
 $id = $_GET['id'];
 
-$query = "DELETE FROM students WHERE id='$id'";
+$query = str_replace(
+    ['{{id}}'],
+    [$id],
+    getQuery("delete_student")
+);
 
 $data = mysqli_query($con, $query);
 
