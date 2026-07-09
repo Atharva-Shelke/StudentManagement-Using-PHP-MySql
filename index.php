@@ -1,4 +1,7 @@
-<?php include 'connection.php'; ?>
+<?php
+include 'connection.php';
+include 'SqlLoader.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +31,7 @@
             </tr>
 
             <?php
-            $query = "SELECT * FROM students";
+            $query = getQuery("find_all_students");
             $data = mysqli_query($con, $query);
 
             $result = mysqli_num_rows($data);
