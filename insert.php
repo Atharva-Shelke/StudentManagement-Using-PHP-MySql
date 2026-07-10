@@ -1,5 +1,6 @@
 <?php
 include 'connection.php';
+include 'SqlLoader.php';
 
 if (isset($_POST['save_btn'])) {
 
@@ -7,8 +8,11 @@ if (isset($_POST['save_btn'])) {
     $lname = $_POST['lastname'];
     $age = $_POST['age'];
 
-    $query = "INSERT INTO students(firstname, lastname, age)
-              VALUES('$fname', '$lname', '$age')";
+    $query = str_replace(
+        ['{{firstname}}', '{{lastname}}', '{{age}}'],
+        [$fname, $lname, $age],
+        getQuery('insert_student')
+    );
 
     $data = mysqli_query($con, $query);
 
