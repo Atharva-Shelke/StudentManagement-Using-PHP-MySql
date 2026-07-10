@@ -1,9 +1,15 @@
 <?php
 include 'connection.php';
+include 'SqlLoader.php';
 
 $id = $_GET['id'];
 
-$select = "SELECT * FROM students WHERE id='$id'";
+$select = str_replace(
+    ['{{id}}'],
+    [$id],
+    getQuery("find_student_by_id")
+);
+
 $data = mysqli_query($con, $select);
 
 $row = mysqli_fetch_array($data);
@@ -14,11 +20,11 @@ if (isset($_POST['update_btn'])) {
     $lname = $_POST['lastname'];
     $age = $_POST['age'];
 
-    $update = "UPDATE students 
-               SET firstname='$fname',
-                   lastname='$lname',
-                   age='$age'
-               WHERE id='$id'";
+    $update = str_replace(
+        ['{{firstname}}', '{{lastname}}', '{{age}}', '{{id}}'],
+        [$fname, $lname, $age, $id],
+        getQuery("update_student")
+    );
 
     $result = mysqli_query($con, $update);
 
