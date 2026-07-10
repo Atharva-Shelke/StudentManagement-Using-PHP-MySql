@@ -6,7 +6,7 @@
 ![CRUD](https://img.shields.io/badge/Operation-CRUD-green)
 ![Server](https://img.shields.io/badge/Server-Apache-red)
 
-A simple PHP-based CRUD web application that demonstrates database connectivity using **MySQL** and **PHP MySQLi**.
+A simple PHP-based CRUD web application that demonstrates database connectivity using **MySQL**, **PHP MySQLi**, and externalized SQL queries loaded from a dedicated SQL file.
 
 The application allows users to perform complete **Create, Read, Update, and Delete (CRUD)** operations on student records through a clean and responsive user interface.
 
@@ -14,7 +14,7 @@ The application allows users to perform complete **Create, Read, Update, and Del
 
 ## 🌐 Live Demo
 
-🔗 https://phpstudentmanager.infinityfreeapp.com/index.php
+🔗 https://phpstudentmanager.infinityfreeapp.com/
 
 ---
 
@@ -29,6 +29,7 @@ The application allows users to perform complete **Create, Read, Update, and Del
 - Confirmation prompt before deletion
 - Simple and beginner-friendly project structure
 - Apache server deployment using Laragon/XAMPP
+- Externalized SQL queries using `SQLqueries.sql`
 
 ---
 
@@ -45,10 +46,22 @@ The application allows users to perform complete **Create, Read, Update, and Del
 
 ---
 
+## 🏗️ Project Architecture
+
+The application follows a simple procedural architecture where:
+
+- PHP handles request processing and page rendering.
+- MySQL stores student records.
+- SQL statements are maintained separately in `SQLqueries.sql`.
+- `SqlLoader.php` loads named SQL queries into the application.
+- HTML and CSS provide the user interface.
+
+---
+
 ## 🗂️ Project Structure
 
 ```text
-student-management-system/
+StudentManagementSystem-Using-PHP-MySql/
 │
 ├── index.php
 ├── add.php
@@ -56,6 +69,8 @@ student-management-system/
 ├── update.php
 ├── delete.php
 ├── connection.php
+├── SqlLoader.php
+├── SQLqueries.sql
 ├── style.css
 ├── README.md
 └── .gitignore
@@ -100,7 +115,7 @@ CREATE TABLE students (
 #### 1. Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Atharva-Shelke/StudentManagement-Using-PHP-MySql
 ```
 
 ---
@@ -190,6 +205,7 @@ This project demonstrates:
 - Frontend styling using CSS
 - Basic client-side interaction using JavaScript alerts
 - Web application deployment using Apache server
+- Separating SQL queries from application logic
 
 ---
 
